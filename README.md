@@ -144,8 +144,8 @@ You can run all steps separately:
 
 ```bash
 # extract counts
-$ qgetcounts -i M62_NA13019.bam -a CNA902Y.bed > M62_NA13019.tsv
-$ qgetcounts -i M62_NA12878.bam -a CNA902Y.bed > M62_NA12878.tsv
+$ qgetcounts -i M62_NA13019.bam -A CNA902Y.bed > M62_NA13019.tsv
+$ qgetcounts -i M62_NA12878.bam -A CNA902Y.bed > M62_NA12878.tsv
 
 # cluster the counts
 $ qcluster -i M62_NA13019.tsv [--names refGene.txt] > M62_NA13019.clustered
@@ -164,7 +164,7 @@ Alternatively, all this can be done using one single command:
 ```bash
 $ quandico -s map=M62_NA13019.bam -s x=2 -s y=0 \ # sample
            -r map=M62_NA12878.bam -r x=2 -r y=0 \ # reference
-           -a CNA902Y.bed                       \ # amplicons
+           -A CNA902Y.bed                       \ # amplicons
            -d results -b 13019_vs_12878         \ # output location and name
            [--cp names=refGene.txt]               # optional cluster names
 ```
